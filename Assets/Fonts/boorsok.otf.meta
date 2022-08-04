@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 8ee96551e833283429c5c1ab5bca7505
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Borsok
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 6e6437a9d638708489ac4dd322cc78de, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
