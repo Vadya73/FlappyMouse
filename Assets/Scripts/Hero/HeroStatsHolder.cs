@@ -24,5 +24,13 @@ namespace Scripts.Hero
             _score++;
             Debug.Log($"{_score}");
         }
+
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.CompareTag("Score"))
+            {
+                AddScore();
+            }
+        }
     }
 }

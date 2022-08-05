@@ -21,6 +21,8 @@ namespace Scripts.UI
         }
         public void ShowDeathCanvas()
         {
+            _isAlive = false;
+
             _gameCanvas.SetActive(false);
             _deathCanvas.SetActive(true);
         }

@@ -10,10 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1984996920}
   - component: {fileID: 1984996922}
-  - component: {fileID: 1984996921}
   m_Layer: 0
   m_Name: ScorePoint
-  m_TagString: Untagged
+  m_TagString: Score
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59,34 +58,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.2591357, y: 3.20216}
   m_EdgeRadius: 0
---- !u!114 &1984996921
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1984996919}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 516e2a363f53c314bb5a9ae6d40dac41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _tag: Player
-  _action:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7483725848529302074, guid: f92dfff5ecded1246b8789d2db935e41, type: 3}
-        m_TargetAssemblyTypeName: Scripts.Hero.HeroStatsHolder, Assembly-CSharp
-        m_MethodName: AddScore
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &1438152967611217631
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,12 +1,12 @@
 using Scripts.UI;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace Scripts.Hero
 {
     public class Hero : MonoBehaviour
     {
+        [Header("HeroSettings")]
         [SerializeField] private float _jumpForce;
         [SerializeField] private float _dashForce;
         [SerializeField] private float _dashCooldown;
@@ -43,7 +43,6 @@ namespace Scripts.Hero
         {
             _canDash = false;
             Time.timeScale = 0f;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
 
