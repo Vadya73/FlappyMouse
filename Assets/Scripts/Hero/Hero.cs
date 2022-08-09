@@ -1,57 +1,34 @@
-using Scripts.UI;
-using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.Events;
 
 namespace Scripts.Hero
 {
+    [RequireComponent(typeof(HeroMovement), typeof(HeroStatsHolder))]
     public class Hero : MonoBehaviour
     {
-        [Header("HeroSettings")]
-        [SerializeField] private float _jumpForce;
-        [SerializeField] private float _dashForce;
-        [SerializeField] private float _dashCooldown;
-        [SerializeField] private bool _canDash;
+        private HeroMovement _heroMovement;
+        private HeroStatsHolder _heroStatsHolder;
 
-        private Rigidbody2D _heroRigidbody;
+        public event UnityAction GameOver;
 
         private void Start()
         {
-            _heroRigidbody = GetComponent<Rigidbody2D>();
-            Time.timeScale = 1f;
+            _heroMovement = GetComponent<HeroMovement>();
+            _heroStatsHolder = GetComponent<HeroStatsHolder>();
 
-            _canDash = true;
+            ResetPlayer();
         }
-        public void Jump()
-        {
-            _heroRigidbody.velocity = Vector2.up * _jumpForce;
-        }
-
-        public void Dash()
-        {
-            if (_canDash)
-            {
-                _heroRigidbody.AddForce(transform.right * _dashForce, ForceMode2D.Impulse);
-
-                _canDash=false;
-                StartCoroutine(DashReload());
-            }
-            else
-                return;
-        }
-
         public void Death()
         {
-            _canDash = false;
-            Time.timeScale = 0f;
+            GameOver?.Invoke();
         }
 
-
-
-        IEnumerator DashReload()
+        public void ResetPlayer()
         {
-            yield return new WaitForSeconds(_dashCooldown);
+            _heroMovement.ResetHero();
+            _heroStatsHolder.ResetStats();
 
-            _canDash = true;
+            Time.timeScale = 1f;
         }
     }
 }

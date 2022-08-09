@@ -5,11 +5,11 @@ namespace Scripts.Hero
 {
     public class HeroInputReader : MonoBehaviour
     {
-        private Hero _hero;
+        private HeroMovement _hero;
 
         private void Start()
         {
-            _hero = GetComponent<Hero>();
+            _hero = GetComponent<HeroMovement>();
         }
 
         public void OnJump(InputAction.CallbackContext context)

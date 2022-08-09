@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 
 namespace Scripts.Hero
@@ -11,26 +10,18 @@ namespace Scripts.Hero
 
         private void Start()
         {
-            _score = 0;
-        }
-
-        private void Update()
-        {
-            _scoreText.text = _score.ToString();
+            ResetStats();
         }
 
         public void AddScore()
         {
             _score++;
-            Debug.Log($"{_score}");
+            _scoreText.text = _score.ToString();
         }
 
-        private void OnTriggerEnter2D(Collider2D collision)
+        public void ResetStats()
         {
-            if (collision.CompareTag("Score"))
-            {
-                AddScore();
-            }
+            _score = 0;
         }
     }
 }

@@ -1,28 +1,38 @@
-using System.Collections;
 using UnityEngine;
 
 namespace Scripts.Obstacles
 {
-    public class ObstacleGenerator : MonoBehaviour
+    public class ObstacleGenerator : ObstaclePool
     {
-        [SerializeField] private GameObject _obstacle;
+        [SerializeField] private GameObject _obstaclePrefab;
 
-        [SerializeField] private float _minYRange, _maxYRange;
+        [SerializeField] private float _minSpawnPositionY, _maxSpawnPositionY;
         [SerializeField] private float _spawnRate;
+
+        private float _elapsedTime = 0;
 
         private void Start()
         {
-            StartCoroutine(ObstacleGenerate());
+            Initialize(_obstaclePrefab);
         }
 
-        IEnumerator ObstacleGenerate()
+        private void Update()
         {
-            while (true)
+            _elapsedTime += Time.deltaTime;
+
+            if (_elapsedTime > _spawnRate)
             {
-                yield return new WaitForSeconds(_spawnRate);
-                float random = Random.Range(_minYRange, _maxYRange);
-                GameObject newObstacle = Instantiate(_obstacle, new Vector2(transform.position.x + 2, random + transform.position.y), Quaternion.identity) ;
-                Destroy(newObstacle, 6);
+                if (TryGetObject(out GameObject obstacle))
+                {
+                    _elapsedTime = 0;
+
+                    float spawnPositionY = Random.Range(_minSpawnPositionY,_maxSpawnPositionY);
+                    Vector3 spawnPoint = new Vector3(transform.position.x, spawnPositionY, transform.position.z);
+                    obstacle.SetActive(true);
+                    obstacle.transform.position = spawnPoint;
+
+                    DisableObjectAbroadScreen();
+                }
             }
         }
     }
