@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 namespace Scripts.Components
 {
-    public class MenuComponent : MonoBehaviour
+    public class MenuComponent
     {
         [SerializeField] private string _menuSceneName = "MainMenu";
         [SerializeField] private string _sceneToLoad;

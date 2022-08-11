@@ -36,8 +36,8 @@ public class GameService : MonoBehaviour
         _hero.GameOver -= OnGameOver;
         _startScreen.PlayButtonClick -= OnPlayButtonClick;
         _gameOverScreen.RestartButtonClick -= OnRestartButtonClick;
-        _pauseScreen.UnPauseButtonClick += OnUnPauseGame;
-        _gameScreen.PauseButtonClick += OnPauseGame;
+        _pauseScreen.UnPauseButtonClick -= OnUnPauseGame;
+        _gameScreen.PauseButtonClick -= OnPauseGame;
     }
 
     private void Start()
