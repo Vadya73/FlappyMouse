@@ -9,12 +9,14 @@ namespace Assets.Scripts.UI
         public event UnityAction PlayButtonClick;
         public override void Close()
         {
-            CanvasGroup.alpha = 0;
+            CanvasGroupToInteract.alpha = 0;
+            Button.interactable = false;
         }
 
         public override void Open()
         {
-            CanvasGroup.alpha = 1;
+            CanvasGroupToInteract.alpha = 1;
+            Button.interactable = true;
         }
 
         protected override void OnButtonClick()

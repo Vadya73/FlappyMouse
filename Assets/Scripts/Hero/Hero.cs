@@ -20,6 +20,7 @@ namespace Scripts.Hero
         }
         public void Death()
         {
+            Debug.Log("Умер!");
             GameOver?.Invoke();
         }
 
@@ -27,8 +28,6 @@ namespace Scripts.Hero
         {
             _heroMovement.ResetHero();
             _heroStatsHolder.ResetStats();
-
-            Time.timeScale = 1f;
         }
     }
 }

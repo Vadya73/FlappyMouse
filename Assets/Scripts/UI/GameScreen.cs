@@ -1,18 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using UnityEngine.Events;
 
-public class GameScreen : MonoBehaviour
+namespace Scripts.UI
 {
-    // Start is called before the first frame update
-    void Start()
+
+}
+public class GameScreen : UIScreen
+{
+    public event UnityAction PauseButtonClick;
+    public override void Close()
     {
-        
+        CanvasGroupToInteract.alpha = 0;
+        Button.interactable = false;
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void Open()
     {
-        
+        CanvasGroupToInteract.alpha = 1;
+        Button.interactable = true;
+    }
+
+    protected override void OnButtonClick()
+    {
+        PauseButtonClick?.Invoke();
     }
 }

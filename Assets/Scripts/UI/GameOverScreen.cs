@@ -1,20 +1,22 @@
-﻿using System.Collections;
-using UnityEngine;
-using UnityEngine.Events;
+﻿using UnityEngine.Events;
+using UnityEngine.UI;
 
 namespace Assets.Scripts.UI
 {
     public class GameOverScreen : UIScreen
     {
         public event UnityAction RestartButtonClick;
+
         public override void Close()
         {
-            CanvasGroup.alpha = 0;
+            CanvasGroupToInteract.alpha = 0;
+            Button.interactable = false;
         }
 
         public override void Open()
         {
-            CanvasGroup.alpha = 1;
+            CanvasGroupToInteract.alpha = 1;
+            Button.interactable = true;
         }
 
         protected override void OnButtonClick()
