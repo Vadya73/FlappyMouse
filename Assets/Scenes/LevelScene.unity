@@ -538,8 +538,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CanvasGroupToInteract: {fileID: 226881177}
   Button: {fileID: 185318514}
-  MenuButton: {fileID: 1251037680}
-  RestartButton: {fileID: 2064905611}
+  _menuButton: {fileID: 0}
+  _restartButton: {fileID: 0}
 --- !u!1 &304761057
 GameObject:
   m_ObjectHideFlags: 0
@@ -1822,6 +1822,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CanvasGroupToInteract: {fileID: 1103479113}
   Button: {fileID: 28464327}
+  _menuButton: {fileID: 1493319671}
 --- !u!1 &1157367485
 GameObject:
   m_ObjectHideFlags: 0
