@@ -12,6 +12,7 @@ namespace Scripts.Hero
         [SerializeField] private float _jumpForce;
         [SerializeField] private float _dashForce;
         [SerializeField] private float _dashCooldown;
+        private bool _canJump;
         private bool _canDash;
 
         [Header("Rotation Settings")]
@@ -29,6 +30,9 @@ namespace Scripts.Hero
             _maxRotation = Quaternion.Euler(0, 0, _maxRotationZ);
             _minRotation = Quaternion.Euler(0, 0, _minRotationZ);
 
+            _canDash = false;
+            _canJump = false;
+
             ResetHero();
         }
 
@@ -39,9 +43,12 @@ namespace Scripts.Hero
 
         public void Jump()
         {
-            transform.rotation = _maxRotation;
-            _heroRigidbody.velocity = new Vector2(0, 0);
-            _heroRigidbody.AddForce(Vector2.up * _jumpForce, ForceMode2D.Force);
+            if (_canJump == true)
+            {
+                transform.rotation = _maxRotation;
+                _heroRigidbody.velocity = new Vector2(0, 0);
+                _heroRigidbody.AddForce(Vector2.up * _jumpForce, ForceMode2D.Force);
+            }
         }
 
         public void Dash()
@@ -53,8 +60,6 @@ namespace Scripts.Hero
                 _canDash=false;
                 StartCoroutine(DashReload());
             }
-            else
-                return;
         }
 
         public void ResetHero()
@@ -72,6 +77,22 @@ namespace Scripts.Hero
             yield return new WaitForSeconds(_dashCooldown);
 
             _canDash = true;
+        }
+
+        public void ToggleJumpCapability()
+        {
+            if (_canJump == true)
+                _canJump = false;
+            else 
+                _canJump = true;
+        }
+
+        public void ToggleDashCapability()
+        {
+            if (_canDash == true)
+                _canDash = false;
+            else
+                _canDash = true;
         }
     }
 }

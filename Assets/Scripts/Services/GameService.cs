@@ -1,6 +1,5 @@
 using Assets.Scripts.UI;
 using Scripts.Hero;
-using Scripts.Obstacles;
 using Scripts.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -8,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameService : MonoBehaviour
 {
     [SerializeField] private Hero _hero;
+    [SerializeField] private HeroMovement _heroMovement;
     [SerializeField] private GameOverScreen _gameOverScreen;
     [SerializeField] private StartScreen _startScreen;
     [SerializeField] private PauseScreen _pauseScreen;
@@ -51,6 +51,8 @@ public class GameService : MonoBehaviour
         _startScreen.Close();
         _gameScreen.Open();
         StartGame();
+        _heroMovement.ToggleDashCapability();
+        _heroMovement.ToggleJumpCapability();
     }
 
     private void OnRestartButtonClick()
@@ -60,6 +62,7 @@ public class GameService : MonoBehaviour
 
     private void OnGameOver()
     {
+        Debug.Log("Я подписался и работаю!!");
         Time.timeScale = 0;
         _gameOverScreen.Open();
     }
@@ -68,25 +71,22 @@ public class GameService : MonoBehaviour
     {
         Time.timeScale = 0;
         _pauseScreen.Open();
-    }
+        _heroMovement.ToggleDashCapability();
+        _heroMovement.ToggleJumpCapability();
+    }   
 
     private void OnUnPauseGame()
     {
         Time.timeScale = 1;
         _pauseScreen.Close();
+        _heroMovement.ToggleDashCapability();
+        _heroMovement.ToggleJumpCapability();
     }
 
-    private void Menu()
-    {
-        SceneManager.LoadScene(_menuSceneName);
-    }
-    private void SceneSwitch()
-    {
-        SceneManager.LoadScene(_sceneToLoad);
-    }
     private void StartGame()
     {
         Time.timeScale = 1;
         _hero.ResetPlayer();
+
     }
 }

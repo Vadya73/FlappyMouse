@@ -538,6 +538,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CanvasGroupToInteract: {fileID: 226881177}
   Button: {fileID: 185318514}
+  MenuButton: {fileID: 1251037680}
+  RestartButton: {fileID: 2064905611}
 --- !u!1 &304761057
 GameObject:
   m_ObjectHideFlags: 0
@@ -1937,7 +1939,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1180921918}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.30546695, y: 1.5475746, z: -0.12133211}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2028,7 +2030,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1664982125}
         m_TargetAssemblyTypeName: Scripts.Components.MenuComponent, Assembly-CSharp
         m_MethodName: Menu
         m_Mode: 1
@@ -2299,6 +2301,8 @@ GameObject:
   - component: {fileID: 1664982123}
   - component: {fileID: 1664982122}
   - component: {fileID: 1664982121}
+  - component: {fileID: 1664982124}
+  - component: {fileID: 1664982125}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2391,6 +2395,40 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1664982124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1664982119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7de44e1020b05145aa8659f05beb7e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hero: {fileID: 1868408915}
+  _heroMovement: {fileID: 1868408914}
+  _gameOverScreen: {fileID: 1103479114}
+  _startScreen: {fileID: 1018119831}
+  _pauseScreen: {fileID: 226881178}
+  _gameScreen: {fileID: 2122521305}
+  _menuSceneName: MainMenu
+  _sceneToLoad: 
+--- !u!114 &1664982125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1664982119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f20892675a264474b87d5291489a9003, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _menuSceneName: MainMenu
+  _sceneToLoad: 
 --- !u!1 &1756004908
 GameObject:
   m_ObjectHideFlags: 0
@@ -2549,6 +2587,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1776976900728918456, guid: f92dfff5ecded1246b8789d2db935e41, type: 3}
   m_PrefabInstance: {fileID: 1776976901197362668}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1868408914 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1776976900728918458, guid: f92dfff5ecded1246b8789d2db935e41, type: 3}
+  m_PrefabInstance: {fileID: 1776976901197362668}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dad7a791f1ec2c40874dbc0ba9036c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1868408915 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8045483621061044393, guid: f92dfff5ecded1246b8789d2db935e41, type: 3}
+  m_PrefabInstance: {fileID: 1776976901197362668}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61ca62a9d665fc64fa432901794f9a7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!90 &2014931161
 Avatar:
   m_ObjectHideFlags: 0
@@ -2890,7 +2950,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1664982125}
         m_TargetAssemblyTypeName: Scripts.Components.MenuComponent, Assembly-CSharp
         m_MethodName: Restart
         m_Mode: 1
@@ -3126,7 +3186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6b2b8792f5e53848b39d13ade01c4af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CanvasGroupToInteract: {fileID: 226881177}
+  CanvasGroupToInteract: {fileID: 2122521304}
   Button: {fileID: 2074998658}
 --- !u!1001 &1776976901197362668
 PrefabInstance:
