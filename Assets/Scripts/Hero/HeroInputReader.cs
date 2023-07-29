@@ -7,7 +7,7 @@ namespace Scripts.Hero
     {
         private HeroMovement _hero;
 
-        private void Start()
+        private void Awake()
         {
             _hero = GetComponent<HeroMovement>();
         }

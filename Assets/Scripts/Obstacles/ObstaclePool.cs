@@ -22,6 +22,13 @@ public class ObstaclePool : MonoBehaviour
             _pool.Add(spawned);
         }
     }
+    public void ResetPool()
+    {
+        foreach (var item in _pool)
+        {
+            item.SetActive(false);
+        }
+    }
 
     protected bool TryGetObject(out GameObject result)
     {
@@ -43,14 +50,6 @@ public class ObstaclePool : MonoBehaviour
                     item.SetActive(false);
                 }
             }
-        }
-    }
-
-    public void ResetPool()
-    {
-        foreach (var item in _pool)
-        {
-            item.SetActive(false);
         }
     }
 }

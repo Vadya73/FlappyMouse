@@ -22,9 +22,13 @@ namespace Scripts.Hero
         private Rigidbody2D _heroRigidbody;
         private Quaternion _minRotation, _maxRotation;
 
-        private void Start()
+        private void Awake()
         {
             _heroRigidbody = GetComponent<Rigidbody2D>();
+        }
+
+        private void Start()
+        {
             _heroRigidbody.velocity = Vector2.zero;
 
             _maxRotation = Quaternion.Euler(0, 0, _maxRotationZ);
@@ -43,7 +47,7 @@ namespace Scripts.Hero
 
         public void Jump()
         {
-            if (_canJump == true)
+            if (_canJump)
             {
                 transform.rotation = _maxRotation;
                 _heroRigidbody.velocity = new Vector2(0, 0);
@@ -69,7 +73,6 @@ namespace Scripts.Hero
             
             _heroRigidbody.velocity= Vector2.zero;
 
-            _canDash = true;
         }
 
         IEnumerator DashReload()
@@ -81,18 +84,12 @@ namespace Scripts.Hero
 
         public void ToggleJumpCapability()
         {
-            if (_canJump == true)
-                _canJump = false;
-            else 
-                _canJump = true;
+            _canJump = _canJump != true;
         }
 
         public void ToggleDashCapability()
         {
-            if (_canDash == true)
-                _canDash = false;
-            else
-                _canDash = true;
+            _canDash = _canDash != true;
         }
     }
 }

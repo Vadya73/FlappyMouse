@@ -19,21 +19,16 @@ public class GameService : MonoBehaviour
     
     private void OnEnable()
     {
-        _hero.GameOver += OnGameOver;
+        Hero.OnGameOvered += OnGameOver; //use static Action example
         _startScreen.PlayButtonClick += OnPlayButtonClick;
         _gameOverScreen.RestartButtonClick += OnRestartButtonClick;
         _pauseScreen.UnPauseButtonClick += OnUnPauseGame;
         _gameScreen.PauseButtonClick += OnPauseGame;
     }
-
-    private void Awake()
-    {
-        Time.timeScale = 0;
-    }
-
+    
     private void OnDisable()
     {
-        _hero.GameOver -= OnGameOver;
+        Hero.OnGameOvered -= OnGameOver;
         _startScreen.PlayButtonClick -= OnPlayButtonClick;
         _gameOverScreen.RestartButtonClick -= OnRestartButtonClick;
         _pauseScreen.UnPauseButtonClick -= OnUnPauseGame;
@@ -62,9 +57,11 @@ public class GameService : MonoBehaviour
 
     private void OnGameOver()
     {
-        Debug.Log("Я подписался и работаю!!");
-        Time.timeScale = 0;
         _gameOverScreen.Open();
+        Time.timeScale = 0;
+        _heroMovement.ToggleDashCapability();
+        _heroMovement.ToggleJumpCapability();
+        _gameScreen.Close();
     }
 
     private void OnPauseGame()
@@ -73,6 +70,7 @@ public class GameService : MonoBehaviour
         _pauseScreen.Open();
         _heroMovement.ToggleDashCapability();
         _heroMovement.ToggleJumpCapability();
+        _gameScreen.Close();
     }   
 
     private void OnUnPauseGame()
@@ -81,12 +79,12 @@ public class GameService : MonoBehaviour
         _pauseScreen.Close();
         _heroMovement.ToggleDashCapability();
         _heroMovement.ToggleJumpCapability();
+        _gameScreen.Open();
     }
 
     private void StartGame()
     {
         Time.timeScale = 1;
         _hero.ResetPlayer();
-
     }
 }

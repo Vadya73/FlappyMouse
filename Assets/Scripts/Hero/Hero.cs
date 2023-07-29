@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.Events;
 
 namespace Scripts.Hero
@@ -9,19 +10,20 @@ namespace Scripts.Hero
         private HeroMovement _heroMovement;
         private HeroStatsHolder _heroStatsHolder;
 
-        public event UnityAction GameOver;
-
-        private void Start()
+        public static Action OnGameOvered;
+        
+        private void Awake()
         {
             _heroMovement = GetComponent<HeroMovement>();
             _heroStatsHolder = GetComponent<HeroStatsHolder>();
-
-            ResetPlayer();
         }
+
+        private void Start() => ResetPlayer();
+        
+        
         public void Death()
         {
-            Debug.Log("Умер!");
-            GameOver?.Invoke();
+            OnGameOvered.Invoke();
         }
 
         public void ResetPlayer()

@@ -1,54 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2136858821
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2136858822}
-  - component: {fileID: 2136858823}
-  m_Layer: 0
-  m_Name: ObstacleGenerator
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2136858822
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2136858821}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.000201, y: 0.00020349026, z: 284.29996}
-  m_LocalScale: {x: 3.3333328, y: 3.3333328, z: 3.3333328}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1776976900728918456}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2136858823
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2136858821}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5c2522444b4c3d44bb1fa3f9ab73c50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _capacity: 10
-  _template: {fileID: 7196704352316657503, guid: bb4c362dadb0e874eb0c91d85e5c6740, type: 3}
-  _minSpawnPositionY: -1
-  _maxSpawnPositionY: 1
-  _spawnRate: 2.5
 --- !u!1 &1776976900728918460
 GameObject:
   m_ObjectHideFlags: 0
@@ -361,3 +312,65 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1001 &4016481737186821574
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1776976900728918456}
+    m_Modifications:
+    - target: {fileID: 4016481738539705600, guid: e016d14800d07ed48aecdcfcaf5ecedb, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4016481738539705600, guid: e016d14800d07ed48aecdcfcaf5ecedb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 10.000201
+      objectReference: {fileID: 0}
+    - target: {fileID: 4016481738539705600, guid: e016d14800d07ed48aecdcfcaf5ecedb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.00020349026
+      objectReference: {fileID: 0}
+    - target: {fileID: 4016481738539705600, guid: e016d14800d07ed48aecdcfcaf5ecedb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 284.29996
+      objectReference: {fileID: 0}
+    - target: {fileID: 4016481738539705600, guid: e016d14800d07ed48aecdcfcaf5ecedb, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4016481738539705600, guid: e016d14800d07ed48aecdcfcaf5ecedb, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4016481738539705600, guid: e016d14800d07ed48aecdcfcaf5ecedb, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4016481738539705600, guid: e016d14800d07ed48aecdcfcaf5ecedb, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4016481738539705600, guid: e016d14800d07ed48aecdcfcaf5ecedb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4016481738539705600, guid: e016d14800d07ed48aecdcfcaf5ecedb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4016481738539705600, guid: e016d14800d07ed48aecdcfcaf5ecedb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4016481738539705603, guid: e016d14800d07ed48aecdcfcaf5ecedb, type: 3}
+      propertyPath: m_Name
+      value: ObstacleGenerator
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e016d14800d07ed48aecdcfcaf5ecedb, type: 3}
+--- !u!4 &2136858822 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4016481738539705600, guid: e016d14800d07ed48aecdcfcaf5ecedb, type: 3}
+  m_PrefabInstance: {fileID: 4016481737186821574}
+  m_PrefabAsset: {fileID: 0}
